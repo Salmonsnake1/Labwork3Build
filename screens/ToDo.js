@@ -122,5 +122,5 @@ const styles = StyleSheet.create({
   taskTextCompleted: {
     textDecorationLine: 'line-through',
     color: 'green'
-  },
+  },    
 });
