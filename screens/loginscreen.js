@@ -1,30 +1,30 @@
 import React, { useState } from 'react';
 import { KeyboardAvoidingView, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
-import { auth } from '../firebase'; // Import auth from firebase
-import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth"; // Import necessary functions
+import { auth } from '../firebase'; 
+import { signInWithEmailAndPassword, createUserWithEmailAndPassword } from "firebase/auth"; 
 
 const LoginScreen = ({ navigation }) => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  // Handle Login functionality
+  
   const handleLogin = () => {
     signInWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
         console.log('Logged in with:', user.email);
-        navigation.replace("Home"); // Navigate to Home after successful login
+        navigation.replace("Home"); 
       })
       .catch(error => alert(error.message));
   };
 
-  // Handle SignUp functionality (if you have a signup flow)
+  
   const handleSignUp = () => {
     createUserWithEmailAndPassword(auth, email, password)
       .then(userCredentials => {
         const user = userCredentials.user;
         console.log('Registered with:', user.email);
-        navigation.replace("Home"); // Optionally navigate to Home after registration
+        navigation.replace("Home"); 
       })
       .catch(error => alert(error.message));
   };
