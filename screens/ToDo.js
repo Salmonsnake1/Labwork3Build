@@ -117,10 +117,10 @@ const styles = StyleSheet.create({
   },
   taskText: {
     fontSize: 16,
-    color: 'red'
+    color: 'red',
   },
   taskTextCompleted: {
     textDecorationLine: 'line-through',
-    color: 'green'
+    color: 'green',
   },    
 });
